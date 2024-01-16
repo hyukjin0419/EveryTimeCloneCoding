@@ -9,4 +9,5 @@ public class ExampleVO {
     private int id;
     private String name;
     private int a;
+    private int b;
 }
