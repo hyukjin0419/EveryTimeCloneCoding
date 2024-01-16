@@ -1,11 +1,11 @@
-package com.example.entity;
+package com.example.vo;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Example {
+public class ExampleVO {
     private int id;
     private String name;
 }
