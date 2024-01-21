@@ -29,4 +29,9 @@ public class HomeController {
     public String board() {
         return "board";
     }
+
+    @GetMapping("/detail")
+    public String detail(){
+        return "detail";
+    }
 }
