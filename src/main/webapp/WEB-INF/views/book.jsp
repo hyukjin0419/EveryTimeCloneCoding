@@ -1,190 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="context" value="${pageContext.request.contextPath}"/>
+
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>책 목록</title>
-    <style>
-        header {
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            top: 0;
-            width: 100%;
-            border-bottom: 1px solid #d6d6d6;
-            background-color: white;
-        }
-
-        #search {
-            height: 60px;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        #search>form {
-            position: relative;
-            margin: 0 auto;
-            width: 100%;
-            max-width: 800px;
-            height: 40px;
-            border: 1px solid #737373;
-            border-radius: 6px;
-        }
-        #search>form>input {
-            padding: 10px 40px 10px 10px;
-            width: 100%;
-            height: 40px;
-            line-height: 20px;
-            box-sizing: border-box;
-            border: 0;
-            color: #292929;
-            font-size: 16px;
-            background-color: transparent;
-        }
-
-        input {
-            outline: none;
-        }
-
-        input[type="text"] {
-            padding-block: 1px;
-            padding-inline: 2px;
-        }
-
-        #title {
-            position: relative;
-            margin: 10px auto;
-            width: 100%;
-            max-width: 800px;
-            height: 40px;
-        }
-
-        #title>#everytime {
-            display: block;
-            margin: 0 auto;
-            width: 70px;
-            height: 40px;
-        }
-
-        span.original {
-            text-decoration: line-through;
-            color: #d6d6d6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        p {
-            display: block;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0;
-            margin-inline-end: 0;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: "맑은 고딕", sans-serif;
-            letter-spacing: -0.5px;
-            background-color: #f2f2f2;
-        }
-
-        #items {
-            position: relative;
-            margin: 120px auto 10px auto;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        #items>a.item>p {
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        span.selling{
-            color: red;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        #items>a.item {
-            position: relative;
-            display: block;
-            padding: 15px 15px;
-            border-bottom: 1px solid #e3e3e3;
-            background-color: white;
-        }
-
-        #items>div.header {
-            position: relative;
-        }
-        #items > div.header > div.filter {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-        }
-
-        #items>a.item>div.thumb>img.book {
-            float: left;
-            margin-right: 15px;
-            width: 100px;
-            height: 140px;
-            background-size: cover;
-            background-position: center center;
-        }
-
-        #items > a.item > p.details > span{
-            display: inline-block;
-            line-height: 17px;
-            color: #444444;
-            font-size: 12px;
-            vertical-align: middle;
-        }
-
-        div,
-        form,nav {
-            display: block;
-        }
-        #bar {
-            position: relative;
-            z-index: 100;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 60px;
-            box-sizing: border-box;
-            border-top: 1px solid #d6d6d6;
-            background-color: #f2f2f2;
-        }
-        #bar > nav {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 800px;
-            height: 100%;
-        }
-        #bar > nav.trisection > a{
-            width: 33%;
-        }
-        #bar > nav > a{
-            display: block;
-            float: left;
-            height: 100%;
-        }
-        #bar > nav > a > span.text {
-            display: block;
-            line-height: 15px;
-            color: #292929;
-            font-size: 12px;
-            font-weight: bold;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="${context}/css/book.css">
 </head>
 
 <body>
 <header>
     <div id="title">
-        <img id="everytime" src="https://cdn-icons-png.flaticon.com/512/5765/5765694.png" alt="썸네일">
+        <img id="everytime" src="https://bookstore.everytime.kr/assets/logo.png" alt="썸네일">
     </div>
     <div id="search">
         <form>
@@ -295,15 +124,15 @@
     <div id="bar">
         <nav class="trisection">
             <a href="#" class="home">
-                <span class="icons home-darkgray-16"></span>
+                <img class="icons" src="${context}/image/house-solid.svg" />
                 <span class="text">홈</span>
             </a>
             <a href="#" class="sell">
-                <span class="icons sell-darkgray-16"></span>
+                <img class="icons" src="${context}/image/pencil.png" />
                 <span class="text">판매하기</span>
             </a>
             <a href="#" class="my">
-                <span class="icons my-darkgray-16"></span>
+                <img class="icons" src="${context}/image/cart-shopping-solid.svg" />
                 <span class="text">마이페이지</span>
             </a>
         </nav>

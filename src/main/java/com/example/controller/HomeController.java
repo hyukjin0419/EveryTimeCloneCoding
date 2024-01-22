@@ -20,11 +20,14 @@ public class HomeController {
 
         return "index";
     }
-    @GetMapping("/test")
-    public String test() {
+    @GetMapping("/view")
+    public String view() {
         return "view";
     }
-
+    @GetMapping("/book")
+    public String book() {
+        return "book";
+    }
     @GetMapping("/board")
     public String board() {
         return "board";
