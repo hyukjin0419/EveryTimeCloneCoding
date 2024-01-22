@@ -1,0 +1,506 @@
+:root {
+    --border-color: rgb(213, 213, 213);
+}
+
+body {
+    margin: 0;
+    font-family: 'NanumGothic', sans-serif;
+}
+
+/* 화면상단 */
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+}
+
+/* 화면상단 컨테이너 */
+header .container {
+    background-color: white;
+    height: 80px;
+    border-bottom: solid 1px var(--border-color);
+    display: flex;
+    justify-content: center;
+}
+
+header .container .topcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    /* 최대 너비 설정 */
+    margin: 0 auto;
+    /* 가운데 정렬을 위해 좌우 margin을 자동으로 계산 */
+    position: fixed;
+}
+
+/* 화면 왼측 상단 로고 컨테이터 */
+.container .logo {
+    /* background-color: red; */
+    position: fixed;
+    height: 80px;
+    width: 150px;
+    float: left;
+    margin-left: 15px;
+}
+
+/* 화면 왼측 상단 로고 이미지 */
+.container .logo img {
+    height: 40px;
+    margin-top: 15px;
+    margin-right: 10px;
+    object-fit: cover;
+    float: left;
+}
+
+/* 화면 왼측 상단 로고 컨테이너 텍스트 */
+.container .logo p {
+    width: 80px;
+    height: 80px;
+    margin: 0px;
+    float: left;
+}
+
+/* 화면 왼측 상단 로고 컨테이너 텍스트 첫번째 줄*/
+.container .logo span:nth-child(1) {
+    color: rgb(246, 27, 32);
+    margin: auto;
+    display: block;
+    font-size: 12px;
+    margin-top: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+/* 화면 왼측 상단 로고 컨테이너 텍스트 두번째 줄*/
+.container .logo span:nth-child(2) {
+    display: block;
+    line-height: 25px;
+    color: #292929;
+    font-size: 20px;
+    margin-left: 3px;
+}
+
+/* 화면 상단 메뉴 컨테이너 */
+.container .menu {
+    margin-left: 300px;
+    position: fixed;
+    /* background-color: blue; */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    width: 600px;
+}
+
+/* 화면 상단 메뉴 컨테이너 리스트 상위*/
+.container .menu ul {
+    margin-top: 25px;
+    display: flex;
+    list-style-type: none;
+}
+
+/* 화면 상단 메뉴 컨테이너 리스트 하위*/
+.container .menu li {
+    float: left;
+    margin-left: 22px;
+}
+
+/*선택 된 게시판*/
+.container .menu .chosen {
+    text-decoration: none;
+    color: rgb(246, 27, 32);
+    font-weight: bold;
+    border-bottom: solid 4px rgb(246, 27, 32);
+    padding-bottom: 32px;
+}
+
+/* 화면 상단 메뉴 컨테이너 리스트 하위 링크*/
+.container .menu li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* 화면 상단 메뉴 컨테이너 리스트 하위 hover시*/
+.container .menu li a:hover {
+    text-decoration: none;
+    color: rgb(246, 27, 32);
+    font-weight: bold;
+}
+
+/* 화면 우측 상단 아이콘 컨테이너 */
+.container .icon {
+    height: 50px;
+    width: 100px;
+    margin-top: 23px;
+    margin-left: 1063px;
+    position: fixed;
+}
+
+/* 화면 우측 상단 아이콘*/
+.container .icon img {
+    height: 20px;
+    padding: 9px;
+    float: right;
+    display: block;
+    margin-right: 5px;
+    border: solid 0.1px var(--border-color);
+    border-radius: 11px;
+}
+
+/*-------여기서 부터 화면 게시판 상단---------*/
+.headerContainer {
+    position: relative;
+    top: 80px;
+    width: 100%;
+    border-bottom: solid 1px var(--border-color);
+    background-color: rgba(245, 245, 245);
+    height: 230px;
+    z-index: 4;
+}
+
+.headUl {
+    position: relative;
+    display: flex;
+    top: 0px;
+    flex-direction: row;
+    margin: 0 auto;
+    /* 가운데 정렬을 위해 좌우 margin을 자동으로 계산 */
+    /* background-color: aqua; */
+    width: 960px;
+    height: 230px;
+    box-sizing: border-box;
+    /* border와 padding이 요소의 크기에 포함되도록 box-sizing 설정 */
+    /* background-color: #f34f3d; */
+}
+
+.headUlList {
+    /* margin-right: 30px; */
+    /* background-color: green; */
+    width: 350px;
+    box-sizing: border-box;
+    /* border와 padding이 요소의 크기에 포함되도록 box-sizing 설정 */
+    /* align-items: center; */
+}
+
+.headUlList ul {
+    height: 200px;
+    /* box-sizing: border-box; */
+}
+
+.headUlList ul li {
+    position: relative;
+    list-style-type: none;
+    font-size: 9pt;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    width: 120px;
+    /* background-color: aquamarine; */
+    right: 20px;
+}
+
+.headerContainer li:hover {
+    text-decoration: none;
+    color: rgb(246, 27, 32);
+    font-weight: bold;
+}
+
+.headUlList .firstheadUl {
+    border-left: solid 0.1px var(--border-color);
+    margin-left: 15px;
+}
+
+.headUlList .selectedUl {
+    color: rgb(246, 27, 32);
+    font-weight: bold;
+}
+
+.headUlList .secondheadUl {}
+
+.headUlList .thirdheadUl {
+    border-left: solid 0.1px var(--border-color);
+}
+
+.headUlList .fourthheadUl {
+    border-left: solid 0.1px var(--border-color);
+    border-right: solid 0.1px var(--border-color);
+}
+
+.headUlList .fifthheadUl li {}
+
+.headUlList .sixthheadUl {
+    border-right: solid 0.1px var(--border-color);
+    margin-right: 15px;
+    width: 130px;
+    box-sizing: border-box;
+}
+
+.dot {
+    position: relative;
+    align-items: center;
+    top: 3px;
+    color: rgb(42, 153, 153);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*************섹션부분**************/
+section {
+    position: relative;
+    display: flex;
+    padding-left: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    width: 1130px;
+    top: 100px;
+}
+
+
+.postbar {
+    width: 774px;
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid #000;
+}
+
+.postbar h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.postbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.postbar ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.content {
+    padding: auto;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    width: 745px;
+    margin-top: 2%;
+}
+
+#self {
+    display: flex;
+    align-items: center;
+}
+
+#picture {
+    width: 50px;
+    margin-right: 10px;
+}
+
+#name,
+#time {
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.content {
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content p {
+    margin-bottom: 10px;
+}
+
+
+.comment {
+    width: 774px;
+    position: relative;
+}
+
+
+.social-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.social-buttons div {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.social-buttons div span {
+    margin-right: 5px;
+}
+
+.like-icon {
+    color: red;
+}
+
+.comment-icon {
+    color: blue;
+}
+
+.star-icon {
+    color: gold;
+}
+
+.text1 {
+    width: 50%;
+    height: 5%;
+    text-align: center;
+    border: 1px solid #000;
+    margin-left: 0%;
+}
+
+.mainmenu {
+    font-size: 15px;
+    color: red;
+    border: 1px solid red;
+    width: 10%;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+.rightColumn {
+    position: relative;
+    left: 25px;
+    width: 350px;
+    height: 580px;
+}
+
+.rightColumn .hotBoardTable {
+    border: 1px solid var(--border-color);
+    width: 325px;
+    height: 190px;
+    border-collapse: collapse;
+    background-color: rgb(249, 249, 249);
+    font-size: 10pt;
+}
+
+.rightColumn .hotBoardTable th {
+    display: flex;
+    align-items: center;
+}
+
+.rightColumn .hotBoardTable th span {
+    position: relative;
+    top: 9px;
+    margin-left: 200px;
+    font-weight: normal;
+    font-size: 9pt;
+    color: rgb(115, 115, 115);
+}
+
+.rightColumn .hotBoardTable .hotBoardTitle {
+    margin-left: 10px;
+    color: rgb(32, 99, 179);
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.rightColumn .hotBoardTable td {
+    border: 1px solid var(--border-color);
+}
+
+.rightColumn .hotBoardTable td span {
+    margin-left: 10px;
+    font-size: 10pt;
+    width: 200px;
+}
+
+.rightColumn .hotBoardTable td .date {
+    font-size: 8pt;
+    color: rgb(115, 115, 115);
+    margin-left: 70px;
+}
+
+#hotBoardTable2 {
+    margin-top: 5px;
+    height: 40px;
+}
+
+#hotBoardTable3 {
+    margin-top: 5px;
+    height: 340px;
+}
+
+#hotBoardTable3 th {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+#hotBoardTable3 th span {
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#hotBoardTable3 img {
+    width: 10px;
+    margin-bottom: 5px;
+}
+
+#hotBoardTable3 div {
+    position: relative;
+    left: 10px;
+}
+
+#hotBoardTable3 .title {
+    font-size: 9pt;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#hotBoardTable3 .contents {
+    font-size: 9pt;
+    color: rgb(115, 115, 115);
+    width: 300px;
+}
+
+.comment .comment1 {
+    box-sizing: border-box;
+    background-color: rgb(249, 249, 249);
+    width: 775px;
+    height: 45px;
+    border: solid 2px var(--border-color);
+    margin-bottom: 6px;
+    margin-top: 5px;
+}
+
+.comment input {
+    color: rgb(288, 288, 288);
+    font-size: 10pt;
+    background-color: rgba(255, 0, 0, 0);
+    /* 완전히 투명한 배경 */
+    outline: none;
+    /* 포커스 효과 없애기 */
+    border: none;
+    /* 테두리 없애기 */
+    margin-left: 5px;
+    margin-top: 11px;
+    width: 700px;
+}
+
+.comment .pencil {
+    position: relative;
+    top: 6px;
+    width: 17px;
+    filter: invert(67%) sepia(0%) saturate(167%) hue-rotate(169deg) brightness(98%) contrast(80%);
+}
