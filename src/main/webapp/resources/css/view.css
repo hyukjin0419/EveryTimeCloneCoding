@@ -110,6 +110,7 @@ body{
     max-width: 800px;
     height: 100%;
 }
+
 #bar > nav > a > img{
     display: block;
     margin: 14px auto 5px;
@@ -119,11 +120,14 @@ body{
 #bar > nav.trisection > a{
     width: 33%;
 }
+
 #bar > nav > a{
     display: block;
     float: left;
     height: 100%;
+    width: 20%;
 }
+
 #bar > nav > a > span.text {
     display: block;
     line-height: 15px;
