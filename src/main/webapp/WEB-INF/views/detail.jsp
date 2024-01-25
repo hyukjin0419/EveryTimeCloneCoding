@@ -13,7 +13,8 @@
 </head>
 <body>
 <header>
-    <!-- 화면최상단 -->
+
+
     <div class="container">
         <div class="topcontainer">
             <div class="logo">
@@ -36,13 +37,14 @@
                 </ul>
             </div>
             <div class="icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/1159/1159740.png" />
-                <img src="https://cdn-icons-png.flaticon.com/512/66/66933.png" />
+                <img src="${context}/image/user.png" />
+                <img src="${context}/image/chat.png" />
             </div>
         </div>
     </div>
 </header>
-<!-- 화면상단 -->
+
+
 <div class="headerContainer">
     <div class="headUl">
         <div class="headUlList">
@@ -148,7 +150,14 @@
                 <input class="pencil" type="submit" value="✏️">
             </div>
         </div>
-        <h3 class="mainmenu">三 글 목록</h3>
+        <div class="option">
+            <ul>
+                <li><a href="" class="mainmenu">三 글 목록</a></li>
+                <li><a href="" class="update">👻 수정하기</a></li>
+                <li><a href="" class="delete">💀 삭제하기</a></li>
+            </ul>
+        </div>
+
     </div>
     <div class="rightColumn">
         <table class="hotBoardTable">
