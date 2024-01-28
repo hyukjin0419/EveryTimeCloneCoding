@@ -21,6 +21,7 @@ header .container {
     display: flex;
     justify-content: center;
     background-color: white;
+    border-bottom: solid 1px var(--border-color);
 }
 header .container .topcontainer {
     left: 150px;
@@ -138,7 +139,7 @@ header .container .topcontainer {
     position: relative;
     top: 82px;
     width: 100%;
-    border-top: solid 1px var(--border-color);
+    /*border-top: solid 1px var(--border-color);*/
     border-bottom: solid 1px var(--border-color);
     background-color: rgba(242, 242, 242);
     /* background-color: blue; */
