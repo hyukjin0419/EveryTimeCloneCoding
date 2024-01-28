@@ -9,14 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>에브리타임 프론트엔드 클론 코딩</title>
   <link rel="stylesheet" type="text/css" href="${context}/css/board.css">
-
-
-  </style>
 </head>
 
 <body>
-<header>
-  <!-- 화면최상단 -->
+<header class="headerDesktop">
+  <!-- 화면최상단/데스크탑에 표시될 내용 -->
   <div class="container">
     <div class="topcontainer">
       <div class="logo">
@@ -45,7 +42,18 @@
     </div>
   </div>
 </header>
-
+<!-- 화면최상단/모바일 -->
+<header class="headerMobile">
+  <div class="headerMobileContainer">
+    <div class="headerContainerBottom">
+      <div class="icon">
+        <img src="${context}/image/menu.png" />
+        <span>자유게시판</span>
+      </div>
+    </div>
+  </div>
+</header>
+<!------------------------------------------------------------------------------->
 <!-- 화면상단 -->
 <div class="headerContainer">
   <div class="headUl">
@@ -106,23 +114,53 @@
     </div>
   </div>
 </div>
+<!------------------------------------------------------------------------------->
 <section>
   <div class="board">
     <div class="boardTitle">자유게시판</div>
-    <div class="btnCollection">팁 창</div>
-    <div class="inputNewPost">
-      <input placeholder=" 새 글을 작성해주세요!" />
-      <img src="${context}/image/pencil.png" />
+
+    <div id="beforeClickContainer">
+      <div id="beforeClick" onclick="showForm()">
+        <span id="beforeClickText">새 글을 작성해주세요!</span>
+        <img src="${context}/image/pencil_grey.svg" />
+      </div>
     </div>
+
+    <form id="myForm">
+      <div id="formTableContainer">
+        <table id="formContainer">
+          <tr>
+            <th>글 제목</th>
+          </tr>
+          <tr>
+            <td><textarea id="formTextArea"></textarea></td>
+          </tr>
+          <tr>
+            <td>
+              <div id="formCheckBoxContainer">
+                <label class="formCheckLabel"><input class="formCheckInput" type="checkbox">질문</label>
+                <label class="formCheckLabel"><input class="formCheckInput" type="checkbox">익명</label>
+                <div id="formBtnContainer">
+                  <input type="image" src="${context}/image/pencil_white.svg" id="formBtn" value="연필로 수정바람">
+                </div>
+              </div>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+    </form>
+
     <table class="boardTable">
       <tr class="boardList">
         <td>
           <div class="boardListDivOne">이상이형 솔직히 오늘은 아님</div>
           <div class="boardListDivTwo">이거 상위권이면 오히려 문제다</div>
           <div class="icons">
-            <span>굳</span>
-            <span>댓글</span>
+            <span><img src="${context}/image/good.png" /> 2</span>
+            <span><img src="${context}/image/chat.svg" /> 3|</span>
             <span>몇 분전</span>
+            <span>|</span>
             <span>익명</span>
           </div>
         </td>
@@ -394,7 +432,7 @@
 
     </table>
     <div class="bottomOfTable">
-      <div class="serachContainer">
+      <div class="searchContainer">
         <select>
           <option>전체</option>
           <option>해시태그</option>
@@ -469,7 +507,7 @@
                   src="${context}/image/star.png" /><img src="${context}/image/star.png" /><img
                   src="${context}/image/star.png" /><img src="${context}/image/star.png" /></div>
           <div class="title">인간커뮤니케이션:신순철</div>
-          <div class="contents">신교수님은 모두까기 인형같다. 기독교, 타종교, 교수자, 학생, 진화론, 목사님등 모드를 차별없이 이판하기 때문이다. 아무 이유없이 비</div>
+          <div class="contents">신교수님은 모두까기 인형같다. 기독교, 타종교, 교수A자, 학생, 진화론, 목사님등 모드를 차별없이 이판하기 때문이다. 아무 이유없이 비</div>
         </td>
       </tr>
       <tr>
@@ -503,5 +541,23 @@
   </div>
 </section>
 </body>
+
+
+<script>
+  function showForm() {
+    var form1 = document.getElementById("beforeClickContainer");
+    var form2 = document.getElementById("myForm");
+    var computedStyle = window.getComputedStyle(form2);
+
+    if (computedStyle.getPropertyValue("display") === "none") {
+      form2.style.display = "block";
+      form1.style.display = "none";
+    } else {
+      form1.style.display = "block";
+      form2.style.display = "none";
+    }
+  }
+
+</script>
 
 </html>
