@@ -32,6 +32,25 @@
             <span class="univ">한동대</span>
         </div>
     </div>
+    <c:forEach items="${books}" var="book">
+        <a class="item" href="${context}/books/${book.getId()}">
+            <div class="thumb">
+                <img class="book"
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ2mJYezRxBt7OMKUO6PglWCEsdeUYzEbJzg&usqp=CAU" alt="썸네일">
+            </div>
+            <h2>${book.getBookTitle()}</h2>
+            <p class="details author">
+                <span>${book.getBookAuthor()} 지음</span>
+            </p>
+            <p class="details publisher">
+                <span>${book.getBookPublisher()}</span>
+            </p>
+            <p class="price">
+                <span class="selling">${book.getSalePrice()}원</span>
+                <span class="original">${book.getRegularPrice()}원</span>
+            </p>
+        </a>
+    </c:forEach>
     <a class="item" href="view.jsp">
         <div class="thumb">
             <img class="book"
@@ -127,7 +146,7 @@
                 <img class="icons" src="${context}/image/house-solid.svg" />
                 <span class="text">홈</span>
             </a>
-            <a href="#" class="sell">
+            <a href="${context}/add_book" class="sell">
                 <img class="icons" src="${context}/image/pencil.png" />
                 <span class="text">판매하기</span>
             </a>

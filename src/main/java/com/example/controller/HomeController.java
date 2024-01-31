@@ -15,14 +15,7 @@ public class HomeController {
     public String view() {
         return "view";
     }
-    @GetMapping("/book")
-    public String book() {
-        return "book";
-    }
-    @GetMapping("/add_book")
-    public String addBook() {
-        return "add_book";
-    }
+
     @GetMapping("/board")
     public String board() {
         return "board";

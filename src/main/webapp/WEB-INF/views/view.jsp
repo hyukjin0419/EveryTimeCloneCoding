@@ -23,22 +23,22 @@
         <h1>The Giver</h1>
         <dl>
             <dt>저자</dt>
-            <dd>로이스 로리</dd>
+            <dd>${book.getBookAuthor()}</dd>
             <dt>출판사</dt>
-            <dd>Houghton Mifflin Harcourt (HMH</dd>
+            <dd>${book.getBookPublisher()}</dd>
             <dt>출판일</dt>
-            <dd>2014년 7월 1일</dd>
+            <dd></dd>
         </dl>
         <p class="price">
-            <span class="selling">5,000원</span>
-            <span class="original">10,700원</span>
+            <span class="selling">${book.getSalePrice()}원</span>
+            <span class="original">${book.getRegularPrice()}원</span>
         </p>
     </div>
     <div class="group group-item">
         <p class="comment">책 내부에 단어 뜻 등을 적어놓았습니다.</p>
         <time>2024년 1월 12일</time>
         <p class="buttons"><a class="red message" href="#">
-            <span class="icons message-white-16"></span><span class="text">판매자 연락처: 010-1234-1234</span>
+            <span class="icons message-white-16"></span><span class="text">판매자 연락처: ${book.getPhoneNumber()}</span>
         </a>
         </p>
     </div>

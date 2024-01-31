@@ -1,6 +1,5 @@
 package com.example.domain;
 
-import com.example.dto.MemberDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -33,11 +32,4 @@ public class Member {
     @Column(name = "last_modified_date", columnDefinition = "TIMESTAMP")
     private LocalDateTime lastModifiedDate;
 
-    public static Member toMember(MemberDto memberDto) {
-        return Member.builder()
-                .id(memberDto.getId())
-                .name(memberDto.getName())
-                .password(memberDto.getPassword())
-                .build();
-    }
 }

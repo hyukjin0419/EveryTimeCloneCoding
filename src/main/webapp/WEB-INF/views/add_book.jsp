@@ -24,24 +24,24 @@
 </header>
 <div class="form">
     <h1>자세한 책 정보를 적어주세요.</h1>
-    <form action="/submit" method="post">
-        <label for="book_title">제목:</label>
-        <input type="text" id="book_title" name="book_title" required><br>
+    <form action="${context}/add_book" method="post">
+        <label for="bookTitle">제목:</label>
+        <input type="text" id="bookTitle" name="bookTitle" required><br>
 
-        <label for="book_author">저자:</label>
-        <input type="text" id="book_author" name="book_author" required><br>
+        <label for="bookAuthor">저자:</label>
+        <input type="text" id="bookAuthor" name="bookAuthor" required><br>
 
-        <label for="book_publisher">출판사:</label>
-        <input type="text" id="book_publisher" name="book_publisher" required><br>
+        <label for="bookPublisher">출판사:</label>
+        <input type="text" id="bookPublisher" name="bookPublisher" required><br>
 
-        <label for="phone_num">연락처:</label>
-        <input type="tel" id="phone_num" name="phone_num" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-1234-5678" required><br>
+        <label for="phoneNumber">연락처:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-1234-5678" required><br>
 
-        <label for="regular_price">정가:</label>
-        <input type="text" id="regular_price" name="regular_price" required><br>
+        <label for="regularPrice">정가:</label>
+        <input type="text" id="regularPrice" name="regularPrice" required><br>
 
-        <label for="selling_price">판매가:</label>
-        <input type="text" id="selling_price" name="selling_price" required><br>
+        <label for="salePrice">판매가:</label>
+        <input type="text" id="salePrice" name="salePrice" required><br>
 
         <input type="button" onclick="history.back()" value="취소">
         <input type="reset" value="초기화">
@@ -55,7 +55,7 @@
             <img class="icons" src="${context}/image/house-solid.svg"/>
             <span class="text">홈</span>
         </a>
-        <a href="#" class="sell">
+        <a href="${context}/add_book" class="sell">
             <img class="icons" src="${context}/image/pencil.png"/>
             <span class="text">판매하기</span>
         </a>
