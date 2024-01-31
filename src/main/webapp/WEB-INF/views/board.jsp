@@ -126,22 +126,23 @@
       </div>
     </div>
 
-    <form id="myForm">
+    <form id="myForm" action="${context}/posts" method="post">
       <div id="formTableContainer">
         <table id="formContainer">
           <tr>
-            <th>글 제목</th>
+            <input type="text" id="title" name="title" maxlength="20" placeholder="제목을 입력하세요.">
           </tr>
           <tr>
-            <td><textarea id="formTextArea"></textarea></td>
+            <td><textarea id="formTextArea" name="content"></textarea></td>
           </tr>
           <tr>
             <td>
               <div id="formCheckBoxContainer">
-                <label class="formCheckLabel"><input class="formCheckInput" type="checkbox">질문</label>
-                <label class="formCheckLabel"><input class="formCheckInput" type="checkbox">익명</label>
+<%--                <label class="formCheckLabel"><input class="formCheckInput" type="checkbox">질문</label>--%>
+                <label class="formCheckLabel"><input class="formCheckInput" name="isAnonymous" type="checkbox">익명</label>
                 <div id="formBtnContainer">
-                  <input type="image" src="${context}/image/pencil_white.svg" id="formBtn" value="연필로 수정바람">
+                  <input type="submit" value="제출">
+<%--                  <input type="image" src="${context}/image/pencil_white.svg" id="formBtn" value="연필로 수정바람">--%>
                 </div>
               </div>
 

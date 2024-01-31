@@ -115,8 +115,8 @@
                 <h4 id="name">익명</h4>
                 <p id="time">지금막</p>
             </div>
-            <h2>한동대 수련회</h2>
-            <p>한동대에서 2월에 한스트말고 수련회같은거 진행하는게 있나요?</p>
+            <h2>${post.getTitle()}</h2>
+            <p>${post.getContent()}</p>
 
             <div class="social-buttons">
                 <div class="like-button">

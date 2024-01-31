@@ -11,18 +11,9 @@ public class HomeController {
         return "redirect:/board";
     }
 
-    @GetMapping("/view")
-    public String view() {
-        return "view";
-    }
 
     @GetMapping("/board")
     public String board() {
         return "board";
-    }
-
-    @GetMapping("/detail")
-    public String detail(){
-        return "detail";
     }
 }

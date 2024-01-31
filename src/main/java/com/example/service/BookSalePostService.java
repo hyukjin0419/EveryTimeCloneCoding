@@ -20,15 +20,19 @@ public class BookSalePostService {
     private final BookSalePostRepository bookSalePostRepository;
 
     public void addBookSalePost(BookSaleRequest bookSaleRequest) {
-        bookSalePostRepository.save(BookSalePost.from(bookSaleRequest));
+        BookSalePost bookSalePost = BookSalePost.from(bookSaleRequest);
+        bookSalePostRepository.save(bookSalePost);
     }
 
     public List<BookSalePostHomeResponse> getBookSalePostList() {
-        List<BookSalePost> bookSalePostList= bookSalePostRepository.findAll();
-        List<BookSalePostHomeResponse> bookSalePostHomeResponseList=new ArrayList<>();
-        for(BookSalePost bookSalePost:bookSalePostList){
+        List<BookSalePost> bookSalePostList= bookSalePostRepository.findAll();// Db로부터 엔티티의 리스트를 가져옴
+
+        List<BookSalePostHomeResponse> bookSalePostHomeResponseList=new ArrayList<>();// 응답을 위한 리스트를 생성
+
+        for(BookSalePost bookSalePost:bookSalePostList){ // 엔티티 리스트를 기반으로 응답을 위한 리스트에 하나씩 데이터를 추가
             bookSalePostHomeResponseList.add(BookSalePostHomeResponse.from(bookSalePost));
         }
+
         return bookSalePostHomeResponseList;
     }
 
