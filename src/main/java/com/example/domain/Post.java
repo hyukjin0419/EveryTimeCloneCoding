@@ -1,5 +1,6 @@
 package com.example.domain;
 
+import com.example.controller.request.CommentRequest;
 import com.example.controller.request.PostRequest;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Setter
@@ -32,11 +35,21 @@ public class Post {
     @Column(name = "last_modified_date", columnDefinition = "TIMESTAMP")
     private LocalDateTime lastModifiedDate;
 
+    @OneToMany(mappedBy = "post", fetch = FetchType.EAGER)
+    private List<Comment> commentList=new ArrayList<>();
     public static Post from(PostRequest postRequest) {
         Post post = new Post();
         post.setTitle(postRequest.getTitle());
         post.setContent(postRequest.getContent());
         post.setIsAnonymous(postRequest.getIsAnonymous());
         return post;
+    }
+
+    public Comment addComment(CommentRequest commentRequest) {
+        Comment comment = new Comment();
+        comment.setContent(commentRequest.getContent());
+        comment.setIsAnonymous(commentRequest.getIsAnonymous());
+        comment.setPost(this);
+        return comment;
     }
 }

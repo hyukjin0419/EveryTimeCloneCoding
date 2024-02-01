@@ -1,6 +1,7 @@
 package com.example.controller;
 
 
+import com.example.controller.request.CommentRequest;
 import com.example.controller.request.PostRequest;
 import com.example.controller.response.PostDetailResponse;
 import com.example.service.PostService;
@@ -28,5 +29,11 @@ public class PostController {
         PostDetailResponse postDetailResponse = postService.getPost(id);
         model.addAttribute("post", postDetailResponse);
         return "detail";
+    }
+
+    @PostMapping("/posts/{id}/comments")
+    public String addComment(@PathVariable("id") Long id, CommentRequest commentRequest){
+        postService.addComment(id, commentRequest);
+        return "redirect:/posts/" + id;
     }
 }
