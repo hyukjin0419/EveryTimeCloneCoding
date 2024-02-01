@@ -16,6 +16,7 @@ public class BookSalePostResponse {
     private String regularPrice;
     private String salePrice;
     private String phoneNumber;
+    private String bookImageURL; //힌트: URL로 바꿔야합니다.
 
     public static BookSalePostResponse from(BookSalePost bookSalePost) {
         BookSalePostResponse bookSalePostResponse = new BookSalePostResponse();
@@ -26,6 +27,7 @@ public class BookSalePostResponse {
         bookSalePostResponse.setRegularPrice(bookSalePost.getRegularPrice());
         bookSalePostResponse.setSalePrice(bookSalePost.getSalePrice());
         bookSalePostResponse.setPhoneNumber(bookSalePost.getPhoneNumber());
+        //여기에 URL로 바꾸는 세팅이 필요합니다.
         return bookSalePostResponse;
     }
 }
