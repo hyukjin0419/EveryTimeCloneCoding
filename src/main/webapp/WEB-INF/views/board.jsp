@@ -130,7 +130,9 @@
       <div id="formTableContainer">
         <table id="formContainer">
           <tr>
-            <input type="text" id="title" name="title" maxlength="20" placeholder="제목을 입력하세요.">
+            <th>
+              <input type="text" id="title" name="title" maxlength="20" placeholder="글 제목">
+            </th>
           </tr>
           <tr>
             <td><textarea id="formTextArea" name="content"></textarea></td>
@@ -141,8 +143,8 @@
 <%--                <label class="formCheckLabel"><input class="formCheckInput" type="checkbox">질문</label>--%>
                 <label class="formCheckLabel"><input class="formCheckInput" name="isAnonymous" type="checkbox">익명</label>
                 <div id="formBtnContainer">
+                  <img src="${context}/image/pencil_white.svg" id="formBtn"  />
                   <input type="submit" value="제출">
-<%--                  <input type="image" src="${context}/image/pencil_white.svg" id="formBtn" value="연필로 수정바람">--%>
                 </div>
               </div>
 
