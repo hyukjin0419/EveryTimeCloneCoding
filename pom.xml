@@ -80,7 +80,23 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
-
+    <!--amazon-s3-->
+    <dependency>
+      <groupId>com.amazonaws</groupId>
+      <artifactId>aws-java-sdk-s3</artifactId>
+      <version>1.12.158</version> <!-- 최신 버전 확인 -->
+    </dependency>
+    <!-- common file upload -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.2.1</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>SpringMVC</finalName>
