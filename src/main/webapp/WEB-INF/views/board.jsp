@@ -131,7 +131,7 @@
         <table id="formContainer">
           <tr>
             <th>
-              <input type="text" id="title" name="title" maxlength="20" placeholder="글 제정">
+              <input type="text" id="title" name="title" maxlength="20" placeholder="글 제목">
             </th>
           </tr>
           <tr>

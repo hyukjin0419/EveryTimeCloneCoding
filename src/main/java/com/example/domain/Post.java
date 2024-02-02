@@ -27,7 +27,7 @@ public class Post {
     @Column(name="content", columnDefinition = "text", nullable = false)
     private String content;
     @Column(name="is_anonymous", columnDefinition = "boolean", nullable = false)
-    private Boolean isAnonymous;
+    private Boolean isAnonymous = true;
     @CreationTimestamp
     @Column(name = "created_date", columnDefinition = "TIMESTAMP")
     private LocalDateTime createdDate;
@@ -41,9 +41,13 @@ public class Post {
         Post post = new Post();
         post.setTitle(postRequest.getTitle());
         post.setContent(postRequest.getContent());
-        post.setIsAnonymous(postRequest.getIsAnonymous());
+
+        // 명시적으로 isAnonymous 값을 설정하며, null일 경우 기본값인 false로 설정합니다.
+        post.setIsAnonymous(postRequest.getIsAnonymous() != null ? postRequest.getIsAnonymous() : false);
+
         return post;
     }
+
 
     public Comment addComment(CommentRequest commentRequest) {
         Comment comment = new Comment();
@@ -52,4 +56,6 @@ public class Post {
         comment.setPost(this);
         return comment;
     }
+
+
 }
