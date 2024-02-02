@@ -141,7 +141,7 @@
             <td>
               <div id="formCheckBoxContainer">
 <%--                <label class="formCheckLabel"><input class="formCheckInput" type="checkbox">질문</label>--%>
-                <label class="formCheckLabel"><input class="formCheckInput" name="isAnonymous" type="checkbox">익명</label>
+                <label class="formCheckLabel"><input id="isAnonymousCheckbox" class="formCheckInput" name="isAnonymous" type="checkbox" onchange="changeColor()">익명</label>
                 <div id="formBtnContainer">
                   <img src="${context}/image/pencil_white.svg" id="formBtn"  />
                   <input type="submit" value="제출">
@@ -561,6 +561,18 @@
     }
   }
 
+  function changeColor() {
+    var checkbox = document.getElementById('isAnonymousCheckbox');
+    var label = document.querySelector('.formCheckLabel');
+
+    if (checkbox.checked) {
+      label.style.color = 'rgb(246, 27, 32)';  // 체크됐을 때 체크박스의 글자 색상 변경
+      // label.style.backgroundColor = 'lightgreen';  // 체크됐을 때 배경색 변경
+    } else {
+      label.style.color = '';  // 체크 해제 시 기본 색상으로 변경
+      // label.style.backgroundColor = '';  // 체크 해제 시 배경색 초기화
+    }
+  }
 </script>
 
 </html>
