@@ -54,66 +54,66 @@
   </div>
 </header>
 <!------------------------------------------------------------------------------->
-<!-- 화면상단 -->
-<div class="headerContainer">
-  <div class="headUl">
-    <div class="headUlList">
-      <div class="listContainer"></div>
-      <ul class="firstheadUl">
-        <li class="selectedUl">자유게시판 <span class="dot">•</span>
-        </li>
-        <li>비밀게시판</li>
-        <li>졸업생게시판</li>
-        <li>새내기게시판</li>
-        <li>시사·이슈</li>
-        <li>장터게시판</li>
-        <li>정보게시판</li>
-        <li>홍보게시판</li>
-      </ul>
-    </div>
+<%--<!-- 화면상단 -->--%>
+<%--<div class="headerContainer">--%>
+<%--  <div class="headUl">--%>
+<%--    <div class="headUlList">--%>
+<%--      <div class="listContainer"></div>--%>
+<%--      <ul class="firstheadUl">--%>
+<%--        <li class="selectedUl">자유게시판 <span class="dot">•</span>--%>
+<%--        </li>--%>
+<%--        <li>비밀게시판</li>--%>
+<%--        <li>졸업생게시판</li>--%>
+<%--        <li>새내기게시판</li>--%>
+<%--        <li>시사·이슈</li>--%>
+<%--        <li>장터게시판</li>--%>
+<%--        <li>정보게시판</li>--%>
+<%--        <li>홍보게시판</li>--%>
+<%--      </ul>--%>
+<%--    </div>--%>
 
-    <div class="headUlList">
-      <ul class="secondheadUl">
-        <li>동아리·학회</li>
-      </ul>
-    </div>
+<%--    <div class="headUlList">--%>
+<%--      <ul class="secondheadUl">--%>
+<%--        <li>동아리·학회</li>--%>
+<%--      </ul>--%>
+<%--    </div>--%>
 
-    <div class="headUlList">
-      <ul class="thirdheadUl">
-        <li>취업·진로</li>
-      </ul>
-    </div>
+<%--    <div class="headUlList">--%>
+<%--      <ul class="thirdheadUl">--%>
+<%--        <li>취업·진로</li>--%>
+<%--      </ul>--%>
+<%--    </div>--%>
 
-    <div class="headUlList">
-      <ul class="fourthheadUl">
-        <li>전산전자공학부 게시판</li>
-        <li>생명과학부 게시판</li>
-        <li>상사학부 게시판</li>
-      </ul>
-    </div>
+<%--    <div class="headUlList">--%>
+<%--      <ul class="fourthheadUl">--%>
+<%--        <li>전산전자공학부 게시판</li>--%>
+<%--        <li>생명과학부 게시판</li>--%>
+<%--        <li>상사학부 게시판</li>--%>
+<%--      </ul>--%>
+<%--    </div>--%>
 
-    <div class="headUlList">
-      <ul class="fifthheadUl">
-        <li>연애/사랑이야기</li>
-        <li>성 게시판</li>
-        <li>콘디</li>
-        <li>넷플릭스/왓챠 게시판</li>
-        <li>끝말잇기</li>
-        <li>유머수용소</li>
-        <li>고양이게시판</li>
-        <li>퀴어 게시판(사랑, 고민··)</li>
-      </ul>
-    </div>
+<%--    <div class="headUlList">--%>
+<%--      <ul class="fifthheadUl">--%>
+<%--        <li>연애/사랑이야기</li>--%>
+<%--        <li>성 게시판</li>--%>
+<%--        <li>콘디</li>--%>
+<%--        <li>넷플릭스/왓챠 게시판</li>--%>
+<%--        <li>끝말잇기</li>--%>
+<%--        <li>유머수용소</li>--%>
+<%--        <li>고양이게시판</li>--%>
+<%--        <li>퀴어 게시판(사랑, 고민··)</li>--%>
+<%--      </ul>--%>
+<%--    </div>--%>
 
-    <div class="headUlList">
-      <ul class="sixthheadUl">
-        <li>큐피트게시판</li>
-        <li>알바생 게시판</li>
-        <li>게시판찾기</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<%--    <div class="headUlList">--%>
+<%--      <ul class="sixthheadUl">--%>
+<%--        <li>큐피트게시판</li>--%>
+<%--        <li>알바생 게시판</li>--%>
+<%--        <li>게시판찾기</li>--%>
+<%--      </ul>--%>
+<%--    </div>--%>
+<%--  </div>--%>
+<%--</div>--%>
 <!------------------------------------------------------------------------------->
 <section>
   <div class="board">
@@ -130,7 +130,9 @@
       <div id="formTableContainer">
         <table id="formContainer">
           <tr>
-            <input type="text" id="title" name="title" maxlength="20" placeholder="제목을 입력하세요.">
+            <th>
+              <input type="text" id="title" name="title" maxlength="20" placeholder="글 제목">
+            </th>
           </tr>
           <tr>
             <td><textarea id="formTextArea" name="content"></textarea></td>
@@ -139,10 +141,10 @@
             <td>
               <div id="formCheckBoxContainer">
 <%--                <label class="formCheckLabel"><input class="formCheckInput" type="checkbox">질문</label>--%>
-                <label class="formCheckLabel"><input class="formCheckInput" name="isAnonymous" type="checkbox">익명</label>
+                <label class="formCheckLabel"><input id="isAnonymousCheckbox" class="formCheckInput" name="isAnonymous" type="checkbox" onchange="changeColor()">익명</label>
                 <div id="formBtnContainer">
+                  <img src="${context}/image/pencil_white.svg" id="formBtn"  />
                   <input type="submit" value="제출">
-<%--                  <input type="image" src="${context}/image/pencil_white.svg" id="formBtn" value="연필로 수정바람">--%>
                 </div>
               </div>
 
@@ -559,6 +561,18 @@
     }
   }
 
+  function changeColor() {
+    var checkbox = document.getElementById('isAnonymousCheckbox');
+    var label = document.querySelector('.formCheckLabel');
+
+    if (checkbox.checked) {
+      label.style.color = 'rgb(246, 27, 32)';  // 체크됐을 때 체크박스의 글자 색상 변경
+      // label.style.backgroundColor = 'lightgreen';  // 체크됐을 때 배경색 변경
+    } else {
+      label.style.color = '';  // 체크 해제 시 기본 색상으로 변경
+      // label.style.backgroundColor = '';  // 체크 해제 시 배경색 초기화
+    }
+  }
 </script>
 
 </html>
