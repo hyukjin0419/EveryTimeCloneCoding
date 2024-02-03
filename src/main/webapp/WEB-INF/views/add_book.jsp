@@ -24,7 +24,7 @@
 </header>
 <div class="form">
     <h1>자세한 책 정보를 적어주세요.</h1>
-    <form action="${context}/add_book" method="post">
+    <form action="${context}/add_book" enctype="multipart/form-data" method="post">
         <label for="bookTitle">제목:</label>
         <input type="text" id="bookTitle" name="bookTitle" required><br>
 
@@ -42,6 +42,10 @@
 
         <label for="salePrice">판매가:</label>
         <input type="text" id="salePrice" name="salePrice" required><br>
+
+        <label for="image" class="form-label">이미지</label>
+        <input type="file" id="image" name="image" class="form-control" required>
+<%--        체크박스+string 으로 백엔드에서 받기--%>
 
         <input type="button" onclick="history.back()" value="취소">
         <input type="reset" value="초기화">

@@ -15,8 +15,9 @@ public class BookSalePostHomeResponse {
     private String bookPublisher;
     private String regularPrice;
     private String salePrice;
+    private String bookImageURL;
 
-    public static BookSalePostHomeResponse from(BookSalePost bookSalePost) {
+    public static BookSalePostHomeResponse from(BookSalePost bookSalePost, String bookImageURL) {
         BookSalePostHomeResponse bookSalePostHomeResponse = new BookSalePostHomeResponse();
         bookSalePostHomeResponse.setId(bookSalePost.getId());
         bookSalePostHomeResponse.setBookTitle(bookSalePost.getBookTitle());
@@ -24,6 +25,7 @@ public class BookSalePostHomeResponse {
         bookSalePostHomeResponse.setBookPublisher(bookSalePost.getBookPublisher());
         bookSalePostHomeResponse.setRegularPrice(bookSalePost.getRegularPrice());
         bookSalePostHomeResponse.setSalePrice(bookSalePost.getSalePrice());
+        bookSalePostHomeResponse.setBookImageURL(bookImageURL);
         return bookSalePostHomeResponse;
     }
 }

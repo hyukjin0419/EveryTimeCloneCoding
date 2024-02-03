@@ -98,9 +98,9 @@
         </dl>
         <div class="images">
             <div class="wrap" style="width: 260px;">
-                <div class="image"
-                     style="background-image: url(https://cdn.imweb.me/thumbnail/20221203/fba3a2f258bdc.png);">
-                </div>
+<%--                <c:forEach var="book" items="${books}">--%>
+                    <img src="${book.getBookImageURL()}" alt="Image" class="thumbnail">
+<%--                </c:forEach>--%>
                 <%--                <div class="image"--%>
                 <%--                     style="background-image: url(poro.png);">--%>
                 <%--                </div>--%>
@@ -142,7 +142,7 @@
             <span class="text">홈</span>
         </a>
         <a href="#" class="sell">
-            <img class="icons" src="${context}/image/pencil.png"/>
+            <img class="icons" src="${context}/image/pen-solid.svg"/>
             <span class="text">판매하기</span>
         </a>
         <a href="#" class="my">
