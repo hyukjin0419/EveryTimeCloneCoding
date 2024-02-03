@@ -45,7 +45,7 @@
 </header>
 
 
-<div class="headerContainer">
+<%--<div class="headerContainer">
     <div class="headUl">
         <div class="headUlList">
             <div class="listContainer"></div>
@@ -103,7 +103,7 @@
             </ul>
         </div>
     </div>
-</div>
+</div>--%>
 <section>
     <div class="post">
         <div class="postbar">
@@ -145,10 +145,12 @@
         </div>
 
         <div class="comment">
-            <div class="comment1">
-                <input placeholder="댓글을 입력해 주세요">
-                <input class="pencil" type="submit" value="✏️">
-            </div>
+
+                <form class="commentInput" action="${context}/posts/${id}/comments" method="post">
+                    <input type="text" placeholder="댓글을 입력해 주세요">
+                    <input class="pencil" type="submit" value="✏️">
+                </form>
+
         </div>
         <div class="option">
             <ul>
