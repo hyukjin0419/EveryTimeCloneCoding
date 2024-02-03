@@ -492,7 +492,7 @@ section {
     width: 300px;
 }
 
-.comment .comment1 {
+.comment .commentInput {
     box-sizing: border-box;
     background-color: rgb(249, 249, 249);
     width: 775px;
@@ -503,7 +503,7 @@ section {
 }
 
 .comment input {
-    color: rgb(288, 288, 288);
+    color: black;
     font-size: 10pt;
     background-color: rgba(255, 0, 0, 0);
     /* 완전히 투명한 배경 */

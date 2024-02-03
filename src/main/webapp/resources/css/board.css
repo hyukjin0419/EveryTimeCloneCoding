@@ -253,7 +253,7 @@ section {
 }
 .board .btnCollection {
     /* background-color: yellow; */
-    height: px;
+    height: 0px;
     border: solid 1px var(--border-color);
     margin-bottom: 6px;
 }
@@ -291,9 +291,16 @@ section {
     box-sizing: border-box;
     /* background-color: burlywood; */
     width: 774px;
-    height: 2200px;
     border: solid 1px var(--border-color);
     border-collapse: collapse;
+    color:black;
+    text-decoration: none;
+
+}
+.boardTable td {
+    box-sizing: border-box;
+    height: 90px;
+
 }
 .board td {
     border: solid 1px var(--border-color);

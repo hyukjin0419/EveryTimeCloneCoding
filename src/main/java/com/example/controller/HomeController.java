@@ -8,12 +8,12 @@ public class HomeController {
 
     @GetMapping("/")
     public String index() {
-        return "redirect:/board";
+        return "redirect:/boards";
     }
 
 
-    @GetMapping("/board")
+    /*@GetMapping("/board")
     public String board() {
         return "board";
-    }
+    }*/
 }
