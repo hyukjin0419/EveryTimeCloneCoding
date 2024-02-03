@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="everytime" uuid="c5c295a0-7383-4821-af47-14263f04757c">
+    <data-source source="LOCAL" name="@walab.handong.edu" uuid="b9b7eb45-ed56-4c83-9387-cfeba2f16a62">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://walab.handong.edu:3306/p232_22000521</jdbc-url>
+      <jdbc-url>jdbc:mysql://walab.handong.edu:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

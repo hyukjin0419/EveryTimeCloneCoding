@@ -29,7 +29,7 @@ public class BookSalePost {
     @Column(name = "book_publisher", columnDefinition = "varchar(20)", nullable = false)
     private String bookPublisher;
 
-    @Column(name = "book_image", columnDefinition = "varchar(20)", nullable = true)
+    @Column(name = "book_image", columnDefinition = "varchar(1000)", nullable = true)
     private String bookImage;
 
     @Column(name = "phone_number", columnDefinition = "varchar(20)", nullable = false)
@@ -40,6 +40,7 @@ public class BookSalePost {
 
     @Column(name = "sale_price", columnDefinition = "varchar(20)", nullable = false)
     private String salePrice;
+//    세가지 string을 추가 (라디오버튼)두개는 라디오 하나는 string
 
     @CreationTimestamp
     @Column(name = "created_date", columnDefinition = "TIMESTAMP")

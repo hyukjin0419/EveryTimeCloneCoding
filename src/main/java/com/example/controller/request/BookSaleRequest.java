@@ -12,4 +12,5 @@ public class BookSaleRequest {
     private String phoneNumber;
     private String regularPrice;
     private String salePrice;
+    //string으로 받는 라디오버튼
 }
