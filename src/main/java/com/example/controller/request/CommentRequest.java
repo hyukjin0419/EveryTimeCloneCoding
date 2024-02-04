@@ -7,5 +7,5 @@ import lombok.Setter;
 @Setter
 public class CommentRequest {
     private String content;
-    private Boolean isAnonymous;
+    private int isAnonymous;
 }
