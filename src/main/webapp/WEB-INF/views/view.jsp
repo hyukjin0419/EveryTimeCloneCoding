@@ -44,63 +44,61 @@
     </div>
     <div class="group group-status">
         <h2>책 상태</h2>
-        <dl>
-            <dt>밑줄 흔적</dt>
-            <dd>
-                <ul>
-                    <li>없음</li>
-                    <li class="checked">연필/샤프</li>
-                    <li>볼펜/형광펜</li>
-                    <hr>
-                </ul>
-            </dd>
-            <dt>필기 흔적</dt>
-            <dd>
-                <ul>
-                    <li>없음</li>
-                    <li class="checked">연필/샤프</li>
-                    <li>볼펜/형광펜</li>
-                    <hr>
-                </ul>
-            </dd>
-            <dt>겉표지</dt>
-            <dd>
-                <ul>
-                    <li class="checked">깨끗함</li>
-                    <li>깨끗하지않음</li>
-                    <hr>
-                </ul>
-            </dd>
-            <dt>이름 기입</dt>
-            <dd>
-                <ul>
-                    <li class="checked">없음</li>
-                    <li>있음</li>
-                    <hr>
-                </ul>
-            </dd>
-            <dt>페이지 변색</dt>
-            <dd>
-                <ul>
-                    <li class="checked">없음</li>
-                    <li>있음</li>
-                    <hr>
-                </ul>
-            </dd>
-            <dt>페이지 훼손</dt>
-            <dd>
-                <ul>
-                    <li>없음</li>
-                    <li class="checked">있음</li>
-                    <hr>
-                </ul>
-            </dd>
-        </dl>
+        <%--        <dl>--%>
+        <%--            <dt>밑줄 흔적</dt>--%>
+        <%--            <dd>--%>
+        <%--                <ul>--%>
+        <%--                    <li>없음</li>--%>
+        <%--                    <li class="checked">연필/샤프</li>--%>
+        <%--                    <li>볼펜/형광펜</li>--%>
+        <%--                    <hr>--%>
+        <%--                </ul>--%>
+        <%--            </dd>--%>
+        <%--            <dt>필기 흔적</dt>--%>
+        <%--            <dd>--%>
+        <%--                <ul>--%>
+        <%--                    <li>없음</li>--%>
+        <%--                    <li class="checked">연필/샤프</li>--%>
+        <%--                    <li>볼펜/형광펜</li>--%>
+        <%--                    <hr>--%>
+        <%--                </ul>--%>
+        <%--            </dd>--%>
+        <%--            <dt>겉표지</dt>--%>
+        <%--            <dd>--%>
+        <%--                <ul>--%>
+        <%--                    <li class="checked">깨끗함</li>--%>
+        <%--                    <li>깨끗하지않음</li>--%>
+        <%--                    <hr>--%>
+        <%--                </ul>--%>
+        <%--            </dd>--%>
+        <%--            <dt>이름 기입</dt>--%>
+        <%--            <dd>--%>
+        <%--                <ul>--%>
+        <%--                    <li class="checked">없음</li>--%>
+        <%--                    <li>있음</li>--%>
+        <%--                    <hr>--%>
+        <%--                </ul>--%>
+        <%--            </dd>--%>
+        <%--            <dt>페이지 변색</dt>--%>
+        <%--            <dd>--%>
+        <%--                <ul>--%>
+        <%--                    <li class="checked">없음</li>--%>
+        <%--                    <li>있음</li>--%>
+        <%--                    <hr>--%>
+        <%--                </ul>--%>
+        <%--            </dd>--%>
+        <%--            <dt>페이지 훼손</dt>--%>
+        <%--            <dd>--%>
+        <%--                <ul>--%>
+        <%--                    <li>없음</li>--%>
+        <%--                    <li class="checked">있음</li>--%>
+        <%--                    <hr>--%>
+        <%--                </ul>--%>
+        <%--            </dd>--%>
+        <%--        </dl>--%>
         <div class="images">
             <div class="wrap" style="width: 260px;">
-<%--                <c:forEach var="book" items="${books}">--%>
-                    <img src="${book.getBookImageURL()}" alt="Image" class="thumbnail">
-<%--                </c:forEach>--%>
+                <img src="${book.getBookImageURL()}" alt="Image" class="thumbnail">
                 <%--                <div class="image"--%>
                 <%--                     style="background-image: url(poro.png);">--%>
                 <%--                </div>--%>
@@ -114,16 +112,14 @@
             <dt>택배</dt>
             <dd>
                 <ul>
-                    <li>가능</li>
-                    <li class="checked">불가</li>
+                    <li class="checked">${book.getDeliverOk()}</li>
                     <hr>
                 </ul>
             </dd>
             <dt>직거래</dt>
             <dd>
                 <ul>
-                    <li class="checked">가능</li>
-                    <li>불가</li>
+                    <li class="checked">${book.getMeetOk()}</li>
                     <hr>
                 </ul>
             </dd>
@@ -137,11 +133,11 @@
 
 <div id="bar">
     <nav class="trisection">
-        <a href="#" class="home">
+        <a href="../books" class="home">
             <img class="icons" src="${context}/image/house-solid.svg"/>
             <span class="text">홈</span>
         </a>
-        <a href="#" class="sell">
+        <a href="${context}/add_book" class="sell">
             <img class="icons" src="${context}/image/pen-solid.svg"/>
             <span class="text">판매하기</span>
         </a>

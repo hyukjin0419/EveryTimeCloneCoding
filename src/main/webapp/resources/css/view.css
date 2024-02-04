@@ -136,7 +136,7 @@ body{
     font-weight: bold;
     text-align: center;
 }
-#item > div.group-status > div.images > div.wrap > div.image {
+#item > div.group-status > div.images > div.wrap > img{
     float: left;
     display: block;
     margin-left: 10px;

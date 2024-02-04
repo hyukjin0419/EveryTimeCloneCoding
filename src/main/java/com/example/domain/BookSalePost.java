@@ -40,6 +40,13 @@ public class BookSalePost {
 
     @Column(name = "sale_price", columnDefinition = "varchar(20)", nullable = false)
     private String salePrice;
+
+    @Column(name = "deliver_ok", columnDefinition = "varchar(20)", nullable = false)
+    private String deliverOk;
+
+    @Column(name = "meet_ok", columnDefinition = "varchar(20)", nullable = false)
+    private String meetOk;
+
 //    세가지 string을 추가 (라디오버튼)두개는 라디오 하나는 string
 
     @CreationTimestamp
@@ -58,6 +65,8 @@ public class BookSalePost {
         bookSalePost.setPhoneNumber(bookSaleRequest.getPhoneNumber());
         bookSalePost.setRegularPrice(bookSaleRequest.getRegularPrice());
         bookSalePost.setSalePrice(bookSaleRequest.getSalePrice());
+        bookSalePost.setDeliverOk(bookSaleRequest.getDeliverOk());
+        bookSalePost.setMeetOk(bookSaleRequest.getMeetOk());
         return bookSalePost;
     }
 }
