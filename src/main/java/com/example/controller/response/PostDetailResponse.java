@@ -26,10 +26,11 @@ public class PostDetailResponse {
         return postDetailResponse;
     }
     @Setter
-    private static class Comment {
+    @Getter
+    public static class Comment {
         private Long id;
         private String content;
-        private Boolean isAnonymous;
+        private int isAnonymous;
 
         public static Comment from(com.example.domain.Comment comment) {
             Comment commentResponse = new Comment();

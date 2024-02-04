@@ -17,7 +17,7 @@
 
     <div class="container">
         <div class="topcontainer">
-            <div class="logo">
+            <div class="logo" onclick="location.href='${context}/boards'">
                 <img class="logoimag" src="https://everytime.kr/images/new/nav.logo.png" />
                 <p>
                     <span>에브리타임</span>
@@ -27,12 +27,12 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="" class="chosen">게시판</a></li>
+                    <li><a href="${context}/boards" class="chosen">게시판</a></li>
                     <li><a href="">시간표</a></li>
                     <li><a href="">강의실</a></li>
                     <li><a href="">학점계산기</a></li>
                     <li><a href="">친구</a></li>
-                    <li><a href="">책방</a></li>
+                    <li><a href="${context}/books">책방</a></li>
                     <li><a href="">캠퍼스픽</a></li>
                 </ul>
             </div>
@@ -107,7 +107,7 @@
 <section>
     <div class="post">
         <div class="postbar">
-            <h1>자유게시판</h1>
+            <h1 onclick="location.href='${context}/boards'">자유게시판</h1>
         </div>
         <div class="content">
             <div id="self">
@@ -121,11 +121,11 @@
             <div class="social-buttons">
                 <div class="like-button">
                     <span class="like-icon">👍</span>
-                    <span class="like-count">2</span>
+                    <span class="like-count">0</span>
                 </div>
                 <div class="comment-button">
                     <span class="comment-icon">💬</span>
-                    <span class="comment-count">2</span>
+                    <span class="comment-count">0</span>
                 </div>
                 <div class="star-button">
                     <span class="star-icon">⭐</span>
@@ -146,8 +146,20 @@
 
         <div class="comment">
 
-                <form class="commentInput" action="${context}/posts/${id}/comments" method="post">
-                    <input type="text" placeholder="댓글을 입력해 주세요">
+                <c:forEach items="${post.getCommentList()}" var="comment">
+                    <form class="comment-container">
+                    <div id="commentSelf">
+                        <img src="https://cf-fpi.everytime.kr/0.png" id="commentPicture">
+                        <h4 id="commentName">익명</h4>
+                    </div>
+                <p>${comment.getContent()}</p>
+                    </form>
+            </c:forEach>
+
+
+                <form class="commentInput" action="${context}/posts/${post.getId()}/comments" method="post">
+                    <input type="text" name="content" placeholder="댓글을 입력해 주세요">
+                    <label class="formCheckLabel"><input id="isAnonymousCheckbox" class="formCheckInput" name="isAnonymous" type="checkbox" value="1">익명</label>
                     <input class="pencil" type="submit" value="✏️">
                 </form>
 

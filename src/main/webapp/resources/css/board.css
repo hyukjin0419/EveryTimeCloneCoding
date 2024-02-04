@@ -294,8 +294,6 @@ section {
     border: solid 1px var(--border-color);
     border-collapse: collapse;
     color:black;
-    text-decoration: none;
-
 }
 .boardTable td {
     box-sizing: border-box;

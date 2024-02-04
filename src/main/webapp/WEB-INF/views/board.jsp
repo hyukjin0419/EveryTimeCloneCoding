@@ -17,7 +17,7 @@
   <!-- 화면최상단/데스크탑에 표시될 내용 -->
   <div class="container">
     <div class="topcontainer">
-      <div class="logo">
+      <div class="logo" onclick="location.href='${context}/boards'">
         <img class="logoimag" src="https://everytime.kr/images/new/nav.logo.png" />
         <p>
           <span>에브리타임</span>
@@ -32,7 +32,7 @@
           <li><a href="">강의실</a></li>
           <li><a href="">학점계산기</a></li>
           <li><a href="">친구</a></li>
-          <li><a href="">책방</a></li>
+          <li><a href="${context}/books">책방</a></li>
           <li><a href="">캠퍼스픽</a></li>
         </ul>
       </div>
@@ -158,11 +158,9 @@
     <table class="boardTable">
       <c:forEach items="${posts}" var="post">
         <tr class="boardList">
-          <td>
-            <a class="item" href="${context}/posts/${post.getId()}">
+          <td onclick="location.href='${context}/posts/${post.getId()}'">
               <div class="boardListDivOne">${post.getTitle()}</div>
               <div class="boardListDivTwo">${post.getContent()}</div>
-            </a>
           </td>
         </tr>
       </c:forEach>

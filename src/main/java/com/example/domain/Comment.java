@@ -21,8 +21,8 @@ public class Comment {
     @Column(name = "content", columnDefinition = "text", nullable = false)
     private String content;
 
-    @Column(name = "is_anonymous", columnDefinition = "boolean", nullable = false)
-    private Boolean isAnonymous;
+    @Column(name = "is_anonymous", columnDefinition = "tinyint(1)", nullable = false)
+    private int isAnonymous;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "post_id", nullable = false)
