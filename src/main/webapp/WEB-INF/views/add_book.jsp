@@ -45,6 +45,14 @@
 
         <label for="image" class="form-label">이미지</label>
         <input type="file" id="image" name="image" class="form-control" required>
+
+        <label for="deliverOk" class="deliver">택배 가능 여부: </label>
+        <input type="radio" id="deliverOk" name="deliverOk" value="가능">가능
+        <input type="radio" id="deliverOk" name="deliverOk" value="불가능" checked>불가능
+
+        <label for="meetOk" class="meet">직거래 가능 여부: </label>
+        <input type="radio" id="meetOk" name="meetOk" value="가능" >가능
+        <input type="radio" id="meetOk" name="meetOk" value="불가능" checked>불가능
 <%--        체크박스+string 으로 백엔드에서 받기--%>
 
         <input type="button" onclick="history.back()" value="취소">
@@ -60,7 +68,7 @@
             <span class="text">홈</span>
         </a>
         <a href="${context}/add_book" class="sell">
-            <img class="icons" src="${context}/image/pencil.png"/>
+            <img class="icons" src="${context}/image/pen-solid.svg"/>
             <span class="text">판매하기</span>
         </a>
         <a href="#" class="my">
